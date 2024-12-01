@@ -17,27 +17,30 @@
             background-color: #f9f9f9;
             color: #333;
             line-height: 1.6;
+            scroll-behavior: smooth;
         }
 
         header {
-            background: linear-gradient(90deg, #4CAF50, #2e7d32);
+            background: linear-gradient(90deg, #1e90ff, #007bff);
             color: white;
-            padding: 20px 0;
+            padding: 30px 0;
             text-align: center;
         }
 
         header h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 10px;
+            letter-spacing: 1px;
         }
 
         header p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            opacity: 0.9;
         }
 
         nav {
             background: #333;
-            padding: 10px 0;
+            padding: 15px 0;
         }
 
         nav ul {
@@ -47,43 +50,49 @@
 
         nav ul li {
             list-style: none;
-            margin: 0 15px;
+            margin: 0 20px;
         }
 
         nav ul li a {
             color: white;
             text-decoration: none;
+            font-size: 1.1rem;
             padding: 10px 20px;
-            font-size: 1rem;
-            transition: background 0.3s, color 0.3s;
+            border-radius: 5px;
+            transition: all 0.3s;
         }
 
         nav ul li a:hover {
-            background-color: #4CAF50;
-            border-radius: 5px;
+            background-color: #1e90ff;
             color: white;
         }
 
         section {
             max-width: 1200px;
-            margin: 20px auto;
+            margin: 30px auto;
             padding: 20px;
         }
 
         .services {
             display: flex;
-            justify-content: space-between;
-            gap: 20px;
             flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
         }
 
         .service {
             background: white;
-            padding: 20px;
+            padding: 25px;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             flex: 1 1 calc(33% - 40px);
             text-align: center;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .service:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
         }
 
         .service img {
@@ -94,7 +103,7 @@
 
         .service h3 {
             margin: 15px 0;
-            color: #4CAF50;
+            color: #007bff;
         }
 
         .service p {
@@ -103,14 +112,16 @@
         }
 
         .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin: 20px 0;
-            padding: 20px;
-            border: 1px solid #ccc;
+            background: white;
+            padding: 30px;
             border-radius: 10px;
-            background: #f1f1f1;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form h2 {
+            margin-bottom: 20px;
+            color: #007bff;
+            text-align: center;
         }
 
         .contact-form label {
@@ -124,18 +135,21 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             transition: border-color 0.3s;
+            width: 100%;
+            margin-bottom: 15px;
         }
 
         .contact-form input:focus, .contact-form textarea:focus {
-            border-color: #4CAF50;
+            border-color: #007bff;
             outline: none;
         }
 
         .contact-form button {
-            padding: 10px;
+            width: 100%;
+            padding: 12px;
             font-size: 1.2rem;
             color: white;
-            background-color: #4CAF50;
+            background-color: #007bff;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -143,23 +157,27 @@
         }
 
         .contact-form button:hover {
-            background-color: #45a049;
+            background-color: #0056b3;
         }
 
         .reviews {
-            margin: 20px 0;
+            background: #f1f1f1;
+            padding: 30px;
+            border-radius: 10px;
         }
 
         .review {
             background: white;
-            padding: 15px;
+            padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             margin-bottom: 15px;
+            position: relative;
+            overflow: hidden;
         }
 
         .review h4 {
-            color: #4CAF50;
+            color: #007bff;
         }
 
         footer {
@@ -178,7 +196,6 @@
 
             .service {
                 width: 100%;
-                margin-bottom: 20px;
             }
         }
     </style>
@@ -186,7 +203,7 @@
 <body>
     <header>
         <h1>Demvar</h1>
-        <p>Надежные решения для вашей безопасности</p>
+        <p>Безопасность для вашего дома и офиса</p>
     </header>
 
     <nav>
@@ -203,31 +220,31 @@
             <div class="service">
                 <img src="camera.jpg" alt="Установка камер">
                 <h3>Установка камер</h3>
-                <p>Устанавливаем камеры видеонаблюдения любой сложности. Полный контроль за вашей безопасностью.</p>
+                <p>Монтаж камер наблюдения для контроля безопасности.</p>
             </div>
             <div class="service">
                 <img src="alarm.jpg" alt="Установка сигнализации">
                 <h3>Установка сигнализации</h3>
-                <p>Обеспечьте защиту вашего дома или офиса с помощью современных систем сигнализации.</p>
+                <p>Современные системы сигнализации для вашего спокойствия.</p>
             </div>
             <div class="service">
-                <img src="wiring.jpg" alt="Проводка">
-                <h3> Проводка Электричества</h3>
-                <p>Качественная проводка электричества для жилых и коммерческих помещений.</p>
+                <img src="wiring.jpg" alt="Электропроводка">
+                <h3>Прокладка проводов</h3>
+                <p>Качественная электропроводка для жилых и коммерческих помещений.</p>
             </div>
         </div>
     </section>
 
     <section id="reviews">
-        <h2>Отзывы наших клиентов</h2>
+        <h2>Отзывы клиентов</h2>
         <div class="reviews">
             <div class="review">
-                <h4>Алексей Иванов</h4>
-                <p>Заказывал установку камер. Все сделали быстро и качественно. Очень доволен!</p>
+                <h4>Иван Петров</h4>
+                <p>Прекрасная работа по установке сигнализации. Все работает!</p>
             </div>
             <div class="review">
-                <h4>Ольга Петрова</h4>
-                <p>Сотрудники фирмы помогли с прокладкой проводки в новой квартире. Профессиональная работа!</p>
+                <h4>Ольга Смирнова</h4>
+                <p>Довольна камерами наблюдения. Мастера сделали все качественно.</p>
             </div>
         </div>
     </section>
@@ -236,13 +253,13 @@
         <h2>Свяжитесь с нами</h2>
         <form class="contact-form">
             <label for="name">Ваше имя:</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="name" placeholder="Введите ваше имя" required>
             
             <label for="email">Ваш Email:</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" placeholder="Введите ваш email" required>
             
             <label for="message">Сообщение:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
+            <textarea id="message" name="message" rows="5" placeholder="Введите ваше сообщение" required></textarea>
             
             <button type="submit">Отправить</button>
         </form>
