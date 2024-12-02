@@ -129,7 +129,7 @@
             font-size: 1.1rem;
         }
 
-        .contact-form input, .contact-form textarea {
+        .contact-form input, .contact-form select, .contact-form textarea {
             padding: 10px;
             font-size: 1rem;
             border: 1px solid #ccc;
@@ -139,7 +139,7 @@
             margin-bottom: 15px;
         }
 
-        .contact-form input:focus, .contact-form textarea:focus {
+        .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus {
             border-color: #007bff;
             outline: none;
         }
@@ -209,7 +209,7 @@
     <nav>
         <ul>
             <li><a href="#services">Услуги</a></li>
-            <li><a href="#contact">Контакты</a></li>
+            <li><a href="#contact">Заказ услуг</a></li>
             <li><a href="#reviews">Отзывы</a></li>
         </ul>
     </nav>
@@ -229,8 +229,8 @@
             </div>
             <div class="service">
                 <img src="wiring.jpg" alt="Электропроводка">
-                <h3>Проводка Компьютерной Сети</h3>
-                <p>Качественная проводка Компьютерной Сети для жилых и коммерческих помещений.</p>
+                <h3>Прокладка проводки</h3>
+                <p>Качественная проводка для жилых и коммерческих помещений.</p>
             </div>
         </div>
     </section>
@@ -250,7 +250,7 @@
     </section>
 
     <section id="contact">
-        <h2>Свяжитесь с нами</h2>
+        <h2>Заказать услугу</h2>
         <form class="contact-form" action="https://formsubmit.co/maximchalyy123@gmail.com" method="POST">
             <label for="name">Ваше имя:</label>
             <input type="text" id="name" name="name" placeholder="Введите ваше имя" required>
@@ -258,11 +258,20 @@
             <label for="email">Ваш Email:</label>
             <input type="email" id="email" name="email" placeholder="Введите ваш email" required>
             
-            <label for="message">Сообщение:</label>
-            <textarea id="message" name="message" rows="5" placeholder="Введите ваше сообщение" required></textarea>
+            <label for="service">Выберите услугу:</label>
+            <select id="service" name="service" required>
+                <option value="">-- Выберите услугу --</option>
+                <option value="Установка камер">Установка камер</option>
+                <option value="Установка сигнализации">Установка сигнализации</option>
+                <option value="Проводка Компютерной Сети">Проводка Компютерной Сети</option>
+            </select>
+            
+            <label for="details">Детали заказа:</label>
+            <textarea id="details" name="details" rows="5" placeholder="Введите детали вашего заказа (например, количество камер, площадь объекта и т.д.)" required></textarea>
             
             <input type="hidden" name="_captcha" value="false">
-            <button type="submit">Отправить</button>
+            <input type="hidden" name="_next" value="https://your-website.github.io/thank-you.html">
+            <button type="submit">Оформить заказ</button>
         </form>
     </section>
 
