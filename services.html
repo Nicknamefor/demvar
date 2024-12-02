@@ -45,6 +45,44 @@
             text-align: center;
         }
 
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .service {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            flex: 1 1 calc(33% - 40px);
+            text-align: center;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .service:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .service img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .service h3 {
+            margin: 15px 0;
+            color: #007bff;
+        }
+
+        .service p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
         .contact-form {
             background: white;
             padding: 30px;
@@ -111,10 +149,29 @@
     </nav>
 
     <section>
-        <h2>Закажите услугу</h2>
-        <p>Заполните форму ниже, чтобы заказать одну из наших услуг. Мы свяжемся с вами в ближайшее время для уточнения деталей.</p>
+        <h2>Наши услуги</h2>
+        <div class="services">
+            <div class="service">
+                <img src="camera.jpg" alt="Установка камер">
+                <h3>Установка камер</h3>
+                <p>Монтаж камер видеонаблюдения для контроля безопасности.</p>
+            </div>
+            <div class="service">
+                <img src="alarm.jpg" alt="Установка сигнализации">
+                <h3>Установка сигнализации</h3>
+                <p>Современные системы сигнализации для вашего спокойствия.</p>
+            </div>
+            <div class="service">
+                <img src="wiring.jpg" alt="Прокладка проводки">
+                <h3>Прокладка проводки</h3>
+                <p>Качественная проводка для жилых и коммерческих помещений.</p>
+            </div>
+        </div>
+    </section>
 
-        <form class="contact-form" action="https://formsubmit.co/maximchalyy123@gmail.com" method="POST">
+    <section>
+        <h2>Заказ услуги</h2>
+        <form class="contact-form" action="https://formsubmit.co/your-email@example.com" method="POST">
             <label for="name">Ваше имя:</label>
             <input type="text" id="name" name="name" placeholder="Введите ваше имя" required>
 
